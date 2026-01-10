@@ -1,3 +1,6 @@
+//this is not done yet gng
+
+
 #include <stdio.h>
 #include <strg.h>
 struct nu(){
