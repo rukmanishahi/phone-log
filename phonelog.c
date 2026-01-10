@@ -16,7 +16,7 @@ char menu(){
     }
     else{ main();
     }
-
+    return 0;
 }
 int main(){}
     struct nu logs;
@@ -25,5 +25,6 @@ int main(){}
     printf("enter the phone number\n");
     scanf("%d\n",&logs.num);
     menu(logs);
+    return 0;
 
 }
