@@ -1,3 +1,6 @@
+//this is not done yet gng
+
+
 #include <stdio.h>
 #include <string.h>
 int main();
@@ -36,6 +39,7 @@ int main(){
         scanf("%lld", &phlogs[i].num);
         
     }
+
     printf("Helloooooo");
     int choice = main_menu(phlogs, n);
 
@@ -57,4 +61,16 @@ void display_logbook(struct nu phlogs[], int n) {
 }
 void exit_program() {
     printf("Exiting the program. Goodbye!\n");
+}
+    return 0;
+}
+int main(){}
+    struct nu logs;
+    printf("enter the name\n");
+    scanf("%s\n",&logs.name);
+    printf("enter the phone number\n");
+    scanf("%d\n",&logs.num);
+    menu(logs);
+    return 0;
+
 }
