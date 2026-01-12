@@ -1,13 +1,13 @@
 //this is not done yet gng
-
-
 #include <stdio.h>
 #include <string.h>
-int main();
 struct nu{
     char name[50];
     long long int num;
 };
+void exit_program() {
+    printf("Exiting the program. Goodbye!\n");
+}
 void display_logbook(struct nu phlogs[], int n);
 int main_menu(struct nu phlogs[], int n){
     char ch;
@@ -33,22 +33,23 @@ int main(){
     printf("enter the amount of contacts\n");
     scanf("%d",&n);
     for(i=0;i<n;i++){
-        printf("enter the name\n");
-        scanf("%s", &phlogs[i].name);
-        printf("enter the phone number\n");
+        printf("enter the name (w/o spaces)::\n");
+        scanf("%s", phlogs[i].name);
+        printf("enter the phone number::\n");
         scanf("%lld", &phlogs[i].num);
-        
     }
-    int choice = main_menu(phlogs, n);
+    choice = main_menu(phlogs, n);
 
-if (choice == 1) {
-    display_logbook(phlogs, n);
-} else {
-    printf(exit_program(););
-}
+    if (choice == 1) {
+        display_logbook(phlogs, n);
+
+    }
+     else {
+        exit_program();
+    }
 return 0;
-
 }
+
 void display_logbook(struct nu phlogs[], int n) {
     int j;
     for (j = 0; j < n; j++) {
@@ -56,19 +57,23 @@ void display_logbook(struct nu phlogs[], int n) {
         printf("Name: %s\n", phlogs[j].name);
         printf("Number: %lld\n", phlogs[j].num);
     }
-}
-void exit_program() {
-    printf("Exiting the program. Goodbye!\n");
-}
-    return 0;
-}
-int main(){}
-    struct nu logs;
-    printf("enter the name\n");
-    scanf("%s\n",&logs.name);
-    printf("enter the phone number\n");
-    scanf("%d\n",&logs.num);
-    menu(logs);
-    return 0;
-
-}
+    //while (1) {
+        printf("\n would u like to add more contacts? (y or n)\n");
+        char ch2;
+        scanf(" %c", &ch2);
+        if (ch2 == 'y' || ch2 == 'Y') {
+            int new_n;
+            printf("enter the number of new contacts to add:\n");
+            scanf("%d", &new_n);
+            for (int k = n; k < n + new_n; k++) {
+                printf("enter the name\n");
+                scanf("%s", phlogs[k].name);
+                printf("enter the phone number\n");
+                scanf("%lld", &phlogs[k].num);
+            }
+            n += new_n; // update total number of contacts
+        } else {
+            exit_program();
+            return;
+        }
+    }
