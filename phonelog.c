@@ -39,14 +39,12 @@ int main(){
         scanf("%lld", &phlogs[i].num);
         
     }
-
-    printf("Helloooooo");
     int choice = main_menu(phlogs, n);
 
 if (choice == 1) {
     display_logbook(phlogs, n);
 } else {
-    exit_program();
+    printf(exit_program(););
 }
 return 0;
 
