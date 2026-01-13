@@ -57,10 +57,11 @@ void display_logbook(struct nu phlogs[], int n) {
         printf("Name: %s\n", phlogs[j].name);
         printf("Number: %lld\n", phlogs[j].num);
     }
-    //while (1) {
-        printf("\n would u like to add more contacts? (y or n)\n");
-        char ch2;
-        scanf(" %c", &ch2);
+}
+int more_contacts(struct nu phlogs[], int n) {
+    printf("\n would u like to add more contacts? (y or n)\n");
+    char ch2;
+    scanf(" %c", &ch2);
         if (ch2 == 'y' || ch2 == 'Y') {
             int new_n;
             printf("enter the number of new contacts to add:\n");
@@ -72,8 +73,8 @@ void display_logbook(struct nu phlogs[], int n) {
                 scanf("%lld", &phlogs[k].num);
             }
             n += new_n; // update total number of contacts
-        } else {
+        } 
+        else {
             exit_program();
-            return;
         }
-    }
+}
